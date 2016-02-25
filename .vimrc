@@ -10,8 +10,8 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
 "Plug 'lambdalisue/vim-gista' "for gists
