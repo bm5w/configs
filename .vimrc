@@ -3,32 +3,32 @@
 " Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'alfredodeza/pytest.vim'
-Plug 'benekastah/neomake'
+"Plug 'alfredodeza/pytest.vim'
+"Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'ervandew/supertab'
-Plug 'fs111/pydoc.vim'
+"Plug 'ervandew/supertab' "tab completion
+"Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/gv.vim'
-Plug 'lambdalisue/vim-gista'
-Plug 'matze/vim-move'
-Plug 'mhinz/vim-signify'
-Plug 'morhetz/gruvbox'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim' "clean up ui
+Plug 'junegunn/gv.vim' "git commit browser
+"Plug 'lambdalisue/vim-gista' "for gists
+Plug 'matze/vim-move' "move blocks of text
+Plug 'mhinz/vim-signify' "show differences
+Plug 'morhetz/gruvbox' "color scheme
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
+Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
+Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
+Plug 'tpope/vim-fugitive' "git wrapper, powerful
+Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
+Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
 call plug#end()
 
 
@@ -125,8 +125,8 @@ au BufRead,BufNewFile *.es6 set filetype=javascript
 au BufRead,BufNewFile *.template set filetype=json
 
 " check syntax on save
-autocmd! BufWritePost * Neomake
-autocmd! BufWritePost init.vim source $MYVIMRC
+"autocmd! BufWritePost * Neomake
+"autocmd! BufWritePost init.vim source $MYVIMRC
 
 
 " Plugin configs
@@ -143,12 +143,12 @@ let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 let g:signify_vcs_list = [ 'git' ]
 let g:signify_sign_show_count = 0
 " vim-gista
-let g:gista#github_user = 'jacquestardie'
+let g:gista#github_user = 'bm5w'
 " neomake
-let g:neomake_error_sign = {
-    \ 'text': '✖',
-    \ 'texthl': 'ErrorMsg',
-    \ }
+"let g:neomake_error_sign = {
+"    \ 'text': '✖',
+"    \ 'texthl': 'ErrorMsg',
+"    \ }
 " vim-pydoc
 let g:pydoc_cmd = "/usr/bin/pydoc"
 
