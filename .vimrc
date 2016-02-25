@@ -1,12 +1,8 @@
-" ab98662 Plugins — via vim-plug
+" Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-"Plug 'alfredodeza/pytest.vim'
-"Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json', { 'for': 'json' }
-"Plug 'ervandew/supertab' "tab completion
-"Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
@@ -14,13 +10,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
-"Plug 'lambdalisue/vim-gista' "for gists
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
 Plug 'morhetz/gruvbox' "color scheme
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
 Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
@@ -28,6 +22,12 @@ Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
 call plug#end()
+"Plug 'alfredodeza/pytest.vim'
+"Plug 'benekastah/neomake'
+"Plug 'ervandew/supertab' "tab completion
+"Plug 'fs111/pydoc.vim' "pydocs in vim
+"Plug 'lambdalisue/vim-gista' "for gists
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 
 " Basics
@@ -95,11 +95,6 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>l :GV<CR>
 " toggle minimal-mode
 nnoremap <leader>z :Goyo<cr>
-" nnoremap <leader>g :Gista list<cr>
-" run Pytest
-" nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
-" nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
-" move between splits
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-L> <C-W><C-L>
@@ -107,6 +102,13 @@ nnoremap <C-H> <C-W><C-H>
 " move to the start|end of a line
 noremap H ^
 noremap L $
+" never enter :ex mode
+nnoremap Q <nop>
+" nnoremap <leader>g :Gista list<cr>
+" run Pytest
+" nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
+" nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
+" move between splits
 " more sane regex searching
 " nnoremap / /\v
 " xnoremap / /\v
@@ -115,8 +117,6 @@ noremap L $
 " vnoremap <tab> %
 " break a line at the cursor
 " imap <C-c> <CR><Esc>O
-" never enter :ex mode
-nnoremap Q <nop>
 
 " recognize (and highlight) esoteric filetypes
 au BufRead,BufNewFile *.geojson set filetype=javascript
@@ -137,13 +137,9 @@ let g:move_key_modifier = 'C'
 " enable true color support in neovim
 let NVIM_TUI_ENABLE_TRUE_COLOR=1
 let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-" vim-markdown
-" let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-signify
 let g:signify_vcs_list = [ 'git' ]
 let g:signify_sign_show_count = 0
-" vim-gista
-" let g:gista#github_user = 'bm5w'
 " neomake
 let g:neomake_error_sign = {
     \ 'text': '✖',
@@ -151,4 +147,8 @@ let g:neomake_error_sign = {
     \ }
 " vim-pydoc
 let g:pydoc_cmd = "/usr/bin/pydoc"
+" vim-markdown
+" let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
+" vim-gista
+" let g:gista#github_user = 'bm5w'
 
