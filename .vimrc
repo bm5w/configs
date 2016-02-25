@@ -1,4 +1,4 @@
-" Plugins — via vim-plug
+" ab98662 Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 "Plug 'alfredodeza/pytest.vim'
@@ -95,7 +95,7 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>l :GV<CR>
 " toggle minimal-mode
 nnoremap <leader>z :Goyo<cr>
-nnoremap <leader>g :Gista list<cr>
+" nnoremap <leader>g :Gista list<cr>
 " run Pytest
 " nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
 " nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
@@ -143,12 +143,12 @@ let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:signify_vcs_list = [ 'git' ]
 let g:signify_sign_show_count = 0
 " vim-gista
-let g:gista#github_user = 'bm5w'
+" let g:gista#github_user = 'bm5w'
 " neomake
-"let g:neomake_error_sign = {
-"    \ 'text': '✖',
-"    \ 'texthl': 'ErrorMsg',
-"    \ }
+let g:neomake_error_sign = {
+    \ 'text': '✖',
+    \ 'texthl': 'ErrorMsg',
+    \ }
 " vim-pydoc
 let g:pydoc_cmd = "/usr/bin/pydoc"
 
