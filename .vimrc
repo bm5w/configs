@@ -74,6 +74,9 @@ let g:html_indent_inctags = "html,body,head,tbody,script"
 let g:html_indent_script1 = "inc"
 let g:html_index_style1 = "inc"
 
+" fix fish shell compat with vim
+" if $SHELL =~ 'bin/fish' set shell=/bin/bash endif
+set shell=/bin/bash
 
 " Rebinds
 " -----------------------------------------------------------------------------
