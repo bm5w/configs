@@ -1,5 +1,3 @@
-
-
 " Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
@@ -97,8 +95,8 @@ nnoremap <leader>l :GV<CR>
 nnoremap <leader>z :Goyo<cr>
 nnoremap <leader>g :Gista list<cr>
 " run Pytest
-nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
-nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
+" nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
+" nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
 " move between splits
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-J> <C-W><C-J>
@@ -138,7 +136,7 @@ let g:move_key_modifier = 'C'
 let NVIM_TUI_ENABLE_TRUE_COLOR=1
 let NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " vim-markdown
-let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
+" let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-signify
 let g:signify_vcs_list = [ 'git' ]
 let g:signify_sign_show_count = 0
