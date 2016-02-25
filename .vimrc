@@ -74,8 +74,7 @@ let g:html_indent_inctags = "html,body,head,tbody,script"
 let g:html_indent_script1 = "inc"
 let g:html_index_style1 = "inc"
 
-" fix fish shell compat with vim
-" if $SHELL =~ 'bin/fish' set shell=/bin/bash endif
+" fix fish shell compat with vim, necessary for vim-signify
 set shell=/bin/bash
 
 " Rebinds
@@ -109,13 +108,13 @@ nnoremap <C-H> <C-W><C-H>
 noremap H ^
 noremap L $
 " more sane regex searching
-nnoremap / /\v
-xnoremap / /\v
+" nnoremap / /\v
+" xnoremap / /\v
 " make it easier to jump from the beginning and end of a tag.
-nnoremap <tab> %
-vnoremap <tab> %
+" nnoremap <tab> %
+" vnoremap <tab> %
 " break a line at the cursor
-imap <C-c> <CR><Esc>O
+" imap <C-c> <CR><Esc>O
 " never enter :ex mode
 nnoremap Q <nop>
 
