@@ -33,7 +33,8 @@ call plug#end()
 " Basics
 " -----------------------------------------------------------------------------
 set background=dark
-set clipboard+=unnamedplus
+set clipboard=unnamedplus "linux
+set clipboard=unnamed "for osx, so yy and pp work
 set cursorline
 set expandtab
 set foldmethod=manual
