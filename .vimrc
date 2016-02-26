@@ -28,6 +28,8 @@ Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
 " Plug 'Valloric/YouCompleteMe' "autocompletion
+Plug 'vim-airline/vim-airline' "powerline alternative
+Plug 'vim-airline/vim-airline-themes' "airline themesw
 Plug 'vim-scripts/indentpython.vim' "python indentation
 
 call plug#end()
@@ -74,10 +76,11 @@ set wrap
 
 syntax enable
 " colorscheme gruvbox
-" let g:solarized_termcolors=256 "shouldn't be necessary for solarized theme
 " in iterm
-set background=dark
+" set background=dark
 colorscheme solarized
+set background=dark
+let g:solarized_termcolors=256 "shouldn't be necessary for solarized theme
 
 let mapleader = "\<Space>"
 
@@ -189,6 +192,10 @@ let g:neomake_error_sign = {
 let g:pydoc_cmd = "/usr/bin/pydoc"
 " SimpylFold, show docstrings on fold
 let g:SimpylFold_docstring_preview=1
+" airline theme
+let g:airline_theme='solarized'
+set laststatus=2    "to always display airline
+" syntastic
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
