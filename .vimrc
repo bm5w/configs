@@ -18,6 +18,7 @@ Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
+Plug 'tmhedberg/SimpylFold' "folding, za
 Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
 Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
@@ -37,7 +38,8 @@ set clipboard=unnamedplus "linux
 set clipboard=unnamed "for osx, so yy and pp work
 set cursorline
 set expandtab
-set foldmethod=manual
+set foldmethod=indent
+set foldlevel=99
 set formatoptions=qrn1
 set hidden
 set ignorecase
@@ -134,6 +136,21 @@ au BufRead,BufNewFile *.template set filetype=json
 autocmd! BufWritePost * Neomake
 autocmd! BufWritePost init.vim source $MYVIMRC
 
+" pep8 indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+" indentation for for other files
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
 " Plugin configs
 " -----------------------------------------------------------------------------
@@ -153,6 +170,8 @@ let g:neomake_error_sign = {
     \ }
 " vim-pydoc
 let g:pydoc_cmd = "/usr/bin/pydoc"
+" SimpylFold, show docstrings on fold
+let g:SimpylFold_docstring_preview=1
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
