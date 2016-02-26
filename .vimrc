@@ -85,6 +85,11 @@ nnoremap <silent><leader>w :w<CR>
 nnoremap <silent><leader>W :wa<CR>
 nnoremap <silent><leader>q :q<CR>
 nnoremap <silent><leader>Q :qa<CR>
+" move between splits
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 " de-highlight
 nnoremap <silent> <leader>x :noh<cr>
 " reload vim configuration
@@ -106,12 +111,6 @@ nnoremap Q <nop>
 " run Pytest
 " nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
 " nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
-
-" move between splits
-" nnoremap <C-K> <C-W><C-K>
-" nnoremap <C-J> <C-W><C-J>
-" nnoremap <C-L> <C-W><C-L>
-" nnoremap <C-H> <C-W><C-H>
 
 " more sane regex searching
 " nnoremap / /\v
@@ -157,4 +156,3 @@ let g:pydoc_cmd = "/usr/bin/pydoc"
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
 " let g:gista#github_user = 'bm5w'
-
