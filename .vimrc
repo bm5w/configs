@@ -1,7 +1,7 @@
 " Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-::Plug 'benekastah/neomake'
+Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
