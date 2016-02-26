@@ -95,26 +95,32 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>l :GV<CR>
 " toggle minimal-mode
 nnoremap <leader>z :Goyo<cr>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 " move to the start|end of a line
 noremap H ^
 noremap L $
 " never enter :ex mode
 nnoremap Q <nop>
+
 " nnoremap <leader>g :Gista list<cr>
+
 " run Pytest
 " nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
 " nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
+
 " move between splits
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+
 " more sane regex searching
 " nnoremap / /\v
 " xnoremap / /\v
+
 " make it easier to jump from the beginning and end of a tag.
 " nnoremap <tab> %
 " vnoremap <tab> %
+
 " break a line at the cursor
 " imap <C-c> <CR><Esc>O
 
