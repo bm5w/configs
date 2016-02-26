@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
@@ -32,7 +33,6 @@ Plug 'vim-scripts/indentpython.vim' "python indentation
 call plug#end()
 "Plug 'alfredodeza/pytest.vim'
 "Plug 'ervandew/supertab' "tab completion
-"Plug 'fs111/pydoc.vim' "pydocs in vim
 "Plug 'lambdalisue/vim-gista' "for gists
 " Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
