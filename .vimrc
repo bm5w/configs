@@ -1,6 +1,7 @@
 " Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
+::Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -23,7 +24,6 @@ Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
 call plug#end()
 "Plug 'alfredodeza/pytest.vim'
-"Plug 'benekastah/neomake'
 "Plug 'ervandew/supertab' "tab completion
 "Plug 'fs111/pydoc.vim' "pydocs in vim
 "Plug 'lambdalisue/vim-gista' "for gists
@@ -131,8 +131,8 @@ au BufRead,BufNewFile *.es6 set filetype=javascript
 au BufRead,BufNewFile *.template set filetype=json
 
 " check syntax on save
-"autocmd! BufWritePost * Neomake
-"autocmd! BufWritePost init.vim source $MYVIMRC
+autocmd! BufWritePost * Neomake
+autocmd! BufWritePost init.vim source $MYVIMRC
 
 
 " Plugin configs
