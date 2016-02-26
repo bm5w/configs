@@ -39,7 +39,6 @@ call plug#end()
 
 " Basics
 " -----------------------------------------------------------------------------
-set background=dark
 " set clipboard=unnamedplus "linux
 set clipboard=unnamed "for osx, so yy and pp work
 set cursorline
@@ -75,8 +74,10 @@ set wrap
 
 syntax enable
 " colorscheme gruvbox
+" let g:solarized_termcolors=256 "shouldn't be necessary for solarized theme
+" in iterm
+set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
 
 let mapleader = "\<Space>"
 
