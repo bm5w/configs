@@ -11,18 +11,22 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
+Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
-Plug 'morhetz/gruvbox' "color scheme
+" Plug 'morhetz/gruvbox' "color scheme
+Plug 'altercation/vim-colors-solarized' 
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
+Plug 'scrooloose/syntastic' "syntax check
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
 Plug 'tmhedberg/SimpylFold' "folding, za
 Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
 Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
+" Plug 'Valloric/YouCompleteMe' "autocompletion
 Plug 'vim-scripts/indentpython.vim' "python indentation
 
 call plug#end()
@@ -36,7 +40,7 @@ call plug#end()
 " Basics
 " -----------------------------------------------------------------------------
 set background=dark
-set clipboard=unnamedplus "linux
+" set clipboard=unnamedplus "linux
 set clipboard=unnamed "for osx, so yy and pp work
 set cursorline
 set expandtab
@@ -70,7 +74,9 @@ set wildmode=list:longest
 set wrap
 
 syntax enable
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme solarized
+let g:solarized_termcolors=256
 
 let mapleader = "\<Space>"
 
@@ -78,6 +84,14 @@ let mapleader = "\<Space>"
 let g:html_indent_inctags = "html,body,head,tbody,script"
 let g:html_indent_script1 = "inc"
 let g:html_index_style1 = "inc"
+
+" flake8 in gutter
+autocmd BufWritePost *.py call Flake8()
+let g:flake8_show_in_gutter=1
+
+" python highlighting
+let python_highlight_all=1
+syntax on
 
 " fix fish shell compat with vim, necessary for vim-signify
 set shell=/bin/bash
