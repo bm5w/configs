@@ -23,6 +23,8 @@ Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
 Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
+Plug 'vim-scripts/indentpython.vim' "python indentation
+
 call plug#end()
 "Plug 'alfredodeza/pytest.vim'
 "Plug 'ervandew/supertab' "tab completion
