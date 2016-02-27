@@ -1,6 +1,7 @@
 " Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
+Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -8,6 +9,7 @@ Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'jmcantrell/vim-virtualenv' "virtualenv
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
@@ -17,7 +19,6 @@ Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
 " Plug 'morhetz/gruvbox' "color scheme
-Plug 'altercation/vim-colors-solarized' 
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
@@ -195,6 +196,11 @@ let g:SimpylFold_docstring_preview=1
 " airplane
 set laststatus=2    "show airplane always
 let g:airline_theme='solarized'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1    "show buffers
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
