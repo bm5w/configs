@@ -29,6 +29,8 @@ Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
 " Plug 'Valloric/YouCompleteMe' "autocompletion
+Plug 'vim-airline/vim-airline' "powerline alternative
+Plug 'vim-airline/vim-airline-themes' "powerline alternative
 Plug 'vim-scripts/indentpython.vim' "python indentation
 
 call plug#end()
@@ -190,8 +192,9 @@ let g:neomake_error_sign = {
 let g:pydoc_cmd = "/usr/bin/pydoc"
 " SimpylFold, show docstrings on fold
 let g:SimpylFold_docstring_preview=1
-" powerline
-set rtp +=/Users/mark/.vim/plugged/powerline/bindings/vim
+" airplane
+set laststatus=2    "show airplane always
+let g:airline_theme='solarized'
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
