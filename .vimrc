@@ -12,7 +12,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
-Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'powerline/powerline', "{'rtp': 'powerline/bindings/vim/'}
 Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
@@ -190,6 +190,8 @@ let g:neomake_error_sign = {
 let g:pydoc_cmd = "/usr/bin/pydoc"
 " SimpylFold, show docstrings on fold
 let g:SimpylFold_docstring_preview=1
+" powerline
+set rtp +=/Users/mark/.vim/plugged/powerline/bindings/vim
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
