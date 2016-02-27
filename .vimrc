@@ -5,6 +5,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-bufferline'
 Plug 'easymotion/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim' "like ctrl p in sublime
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -19,7 +20,6 @@ Plug 'powerline/powerline', "{'rtp': 'powerline/bindings/vim/'}
 Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
-" Plug 'morhetz/gruvbox' "color scheme
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
@@ -39,7 +39,8 @@ call plug#end()
 "Plug 'alfredodeza/pytest.vim'
 "Plug 'ervandew/supertab' "tab completion
 "Plug 'lambdalisue/vim-gista' "for gists
-" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+"Plug 'morhetz/gruvbox' "color scheme
+"Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 
 " Basics
