@@ -26,7 +26,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
 Plug 'scrooloose/syntastic' "syntax check
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
-Plug 'terryma/vim-multiple-cursors' "multiple cursors
+Plug 'terryma/vim-multiple-cursors' "multiple cursors, in normal mode: ctrl n to select next iteration of current word, ctrl x skips a selection, 
 Plug 'tmhedberg/SimpylFold' "folding, za
 Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
 Plug 'tpope/vim-fugitive' "git wrapper, powerful
