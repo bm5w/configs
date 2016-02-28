@@ -5,6 +5,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-bufferline'
 Plug 'easymotion/vim-easymotion'
+Plug 'ervandew/supertab' "tab completion
 Plug 'ctrlpvim/ctrlp.vim' "like ctrl p in sublime
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
@@ -37,7 +38,6 @@ Plug 'vim-scripts/indentpython.vim' "python indentation
 
 call plug#end()
 "Plug 'alfredodeza/pytest.vim'
-"Plug 'ervandew/supertab' "tab completion
 "Plug 'lambdalisue/vim-gista' "for gists
 "Plug 'morhetz/gruvbox' "color scheme
 "Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -68,7 +68,7 @@ set shiftwidth=4
 set smartcase
 set softtabstop=4
 set splitright
-set statusline=%f%{fugitive#statusline()}
+" set statusline=%f%{fugitive#statusline()}
 set synmaxcol=400  " No highlighting beyond 400 columns
 set tabstop=4
 set undodir=~/.vim/undodir
