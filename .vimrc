@@ -26,6 +26,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
 Plug 'scrooloose/syntastic' "syntax check
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
+Plug 'terryma/vim-multiple-cursors' "multiple cursors
 Plug 'tmhedberg/SimpylFold' "folding, za
 Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
 Plug 'tpope/vim-fugitive' "git wrapper, powerful
@@ -53,7 +54,9 @@ set foldmethod=indent
 set foldlevel=99
 set formatoptions=qrn1
 set hidden
+set hlsearch "highlight search matches
 set ignorecase
+set incsearch "search as characters are entered
 set laststatus=1
 set listchars=eol:¬,extends:…,precedes:…,tab:\ \ 
 set modelines=0
@@ -65,6 +68,7 @@ set relativenumber
 set ruler
 set scrolloff=5
 set shiftwidth=4
+set showmatch " hightlight matching
 set smartcase
 set softtabstop=4
 set splitright
@@ -131,6 +135,8 @@ noremap H ^
 noremap L $
 " never enter :ex mode
 nnoremap Q <nop>
+" turn off search highlight
+nnoremap <leader>x :nohlsearch<CR>
 
 " nnoremap <leader>g :Gista list<cr>
 
@@ -159,21 +165,21 @@ au BufRead,BufNewFile *.template set filetype=json
 autocmd! BufWritePost * Neomake
 autocmd! BufWritePost init.vim source $MYVIMRC
 
-" pep8 indentation
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+" " pep8 indentation
+" au BufNewFile,BufRead *.py
+"     \ set tabstop=4
+"     \ set softtabstop=4
+"     \ set shiftwidth=4
+"     \ set textwidth=79
+"     \ set expandtab
+"     \ set autoindent
+"     \ set fileformat=unix
 
-" indentation for for other files
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+" " indentation for for other files
+" au BufNewFile,BufRead *.js, *.html, *.css
+"     \ set tabstop=2
+"     \ set softtabstop=2
+"     \ set shiftwidth=2
 
 " Plugin configs
 " -----------------------------------------------------------------------------
@@ -204,6 +210,9 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#bufferline#enabled = 1
+" CtrlP settings
+let g:ctrlp_switch_buffer = 0 "always open files in new buffer
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""' "let ctrlp use ag 
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
