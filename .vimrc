@@ -16,7 +16,7 @@ Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
 " Plug 'morhetz/gruvbox' "color scheme
-Plug 'altercation/vim-colors-solarized' 
+Plug 'altercation/vim-colors-solarized'
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
