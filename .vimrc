@@ -84,10 +84,11 @@ set wrap
 
 syntax enable
 " colorscheme gruvbox
-" let g:solarized_termcolors=256 "shouldn't be necessary for solarized theme
 " in iterm
-set background=dark
+" set background=dark
 colorscheme solarized
+set background=dark
+let g:solarized_termcolors=256 "shouldn't be necessary for solarized theme
 
 let mapleader = "\<Space>"
 
@@ -213,6 +214,7 @@ let g:airline#extensions#bufferline#enabled = 1
 " CtrlP settings
 let g:ctrlp_switch_buffer = 0 "always open files in new buffer
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""' "let ctrlp use ag 
+" syntastic
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
