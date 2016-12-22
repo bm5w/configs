@@ -11,18 +11,21 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
+Plug 'HerringtonDarkhomes/yats.vim' "typescript highlighting and dom keywords
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'jmcantrell/vim-virtualenv' "virtualenv
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
+Plug 'leafgarland/typescript-vim' "typescript highlighting
 Plug 'powerline/powerline', "{'rtp': 'powerline/bindings/vim/'}
 Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'Quramy/tsuquyomi' "typescript completion +
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
 Plug 'scrooloose/syntastic' "syntax check
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
