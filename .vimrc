@@ -11,7 +11,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
-Plug 'HerringtonDarkhomes/yats.vim' "typescript highlighting and dom keywords
+Plug 'HerringtonDarkhome/yats.vim' "typescript highlighting and dom keywords
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'jmcantrell/vim-virtualenv' "virtualenv
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -29,7 +29,7 @@ Plug 'Quramy/tsuquyomi' "typescript completion +
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
 Plug 'scrooloose/syntastic' "syntax check
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
-Plug 'Shougo/vimproc.vim' "async for vim, requirement for tsuquyomi
+Plug 'Shougo/vimproc.vim', {'do' : 'make'} "async for vim, requirement for tsuquyomi
 Plug 'terryma/vim-multiple-cursors' "multiple cursors, in normal mode: ctrl n to select next iteration of current word, ctrl x skips a selection, 
 Plug 'tmhedberg/SimpylFold' "folding, za
 Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
@@ -69,6 +69,7 @@ set nobackup
 set noswapfile
 set nowritebackup
 set relativenumber
+" set rtp=~/.fzf "for fzf
 set ruler
 set scrolloff=5
 set shiftwidth=4
@@ -217,9 +218,17 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#bufferline#enabled = 1
 " CtrlP settings
 let g:ctrlp_switch_buffer = 0 "always open files in new buffer
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""' "let ctrlp use ag 
+let g:ctrlp_map = '<c-p:'
+cet g:ctrlp_cmd = 'CtrlP'
 " syntastic
+let g:tsquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
 " let g:gista#github_user = 'bm5w'
+" youcompleteme for as you type complete with typescript
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
