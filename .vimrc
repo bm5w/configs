@@ -1,4 +1,4 @@
-" Plugins — via vim-plug
+  Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
 Plug 'leafgarland/typescript-vim' "typescript highlighting
+Plug 'pangloss/vim-javascript'  "Syntax highlighting and indentation for js
 Plug 'powerline/powerline', "{'rtp': 'powerline/bindings/vim/'}
 Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
