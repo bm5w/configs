@@ -1,6 +1,7 @@
   Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
+Plug 'alfredodeza/pytest.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-bufferline'
@@ -43,7 +44,6 @@ Plug 'vim-airline/vim-airline-themes' "powerline alternative
 Plug 'vim-scripts/indentpython.vim' "python indentation
 
 call plug#end()
-"Plug 'alfredodeza/pytest.vim'
 "Plug 'lambdalisue/vim-gista' "for gists
 "Plug 'morhetz/gruvbox' "color scheme
 "Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
