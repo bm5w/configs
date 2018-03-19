@@ -6,7 +6,7 @@ Plug 'benekastah/neomake'
 Plug 'bling/vim-bufferline'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab' "tab completion
-" Plug 'ctrlpvim/ctrlp.vim' "like ctrl p in sublime, doesn't work in msys2 
+Plug 'ctrlpvim/ctrlp.vim' "like ctrl p in sublime, doesn't work in msys2 
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
@@ -15,8 +15,8 @@ Plug 'isRuslan/vim-es6'
 Plug 'jaxbot/browserlink.vim',
 " Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'jmcantrell/vim-virtualenv' "virtualenv
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf/', 'do': './install --all' }
-" Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf/', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
 Plug 'powerline/powerline', "{'rtp': 'powerline/bindings/vim/'}
@@ -36,7 +36,7 @@ Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
 Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
-" Plug 'Valloric/YouCompleteMe' "autocompletion
+Plug 'Valloric/YouCompleteMe' "autocompletion
 Plug 'vim-airline/vim-airline' "powerline alternative
 Plug 'vim-airline/vim-airline-themes' "powerline alternative
 Plug 'vim-scripts/indentpython.vim' "python indentation
@@ -226,7 +226,9 @@ let g:airline#extensions#bufferline#enabled = 0
 let g:airline_section_y = ''
 " CtrlP settings
 let g:ctrlp_switch_buffer = 0 "always open files in new buffer
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""' "let ctrlp use ag 
+let g:ctrlp_map = '<c-p:'
+let g:ctrlp_cmd = 'CtrlP'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""' "let ctrlp use ag 
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
@@ -236,6 +238,11 @@ let g:synatastic_javascript_checkers = ['eslint']
 " syntastic react
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+  " youcompleteme for as you type complete with typescript
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
 " eslint
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
