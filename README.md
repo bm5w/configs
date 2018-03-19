@@ -19,3 +19,4 @@ https://github.com/mavnn/mintty-colors-solarized
 cat .minttyrc.dark >> .minttyrc
 
 
+ln -s ~/projects/configs/.bashrc ~/.bashrc
