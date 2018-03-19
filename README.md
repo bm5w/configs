@@ -14,3 +14,8 @@ fish_prompt.fish -> ~/.config/fish/functions/
 # from ~/.config/fish/functions
 ln -s ~/projects/configs/fish_prompt.fish fish_prompt.fish
 
+#UBUNTU
+https://github.com/mavnn/mintty-colors-solarized
+cat .minttyrc.dark >> .minttyrc
+
+
