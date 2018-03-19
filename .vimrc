@@ -1,49 +1,48 @@
-  Plugins — via vim-plug
+" Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'alfredodeza/pytest.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-bufferline'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab' "tab completion
-Plug 'ctrlpvim/ctrlp.vim' "like ctrl p in sublime
+" Plug 'ctrlpvim/ctrlp.vim' "like ctrl p in sublime, doesn't work in msys2 
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
-Plug 'HerringtonDarkhome/yats.vim' "typescript highlighting and dom keywords
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
+Plug 'isRuslan/vim-es6'
+Plug 'jaxbot/browserlink.vim',
+" Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'jmcantrell/vim-virtualenv' "virtualenv
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf/', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim' "clean up ui
 Plug 'junegunn/gv.vim' "git commit browser
-Plug 'leafgarland/typescript-vim' "typescript highlighting
-Plug 'pangloss/vim-javascript'  "Syntax highlighting and indentation for js
 Plug 'powerline/powerline', "{'rtp': 'powerline/bindings/vim/'}
 Plug 'nvie/vim-flake8' "pep8 check
 Plug 'matze/vim-move' "move blocks of text
 Plug 'mhinz/vim-signify' "show differences
+Plug 'mxw/vim-jsx' "jsx syntax support
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'Quramy/tsuquyomi' "typescript completion +
+Plug 'pangloss/vim-javascript'
 Plug 'Raimondi/delimitMate' "auto closing of quotes, parenthesis and brackets
 Plug 'scrooloose/syntastic' "syntax check
 Plug 'Shougo/deoplete.nvim' "autocomplete requires neovim
-Plug 'Shougo/vimproc.vim', {'do' : 'make'} "async for vim, requirement for tsuquyomi
 Plug 'terryma/vim-multiple-cursors' "multiple cursors, in normal mode: ctrl n to select next iteration of current word, ctrl x skips a selection, 
 Plug 'tmhedberg/SimpylFold' "folding, za
 Plug 'tpope/vim-commentary' "autocomment, line: gcc, visual: gc
 Plug 'tpope/vim-fugitive' "git wrapper, powerful
 Plug 'tpope/vim-surround' "change surrounding. ex: ' to <p>, cs'<p>
 Plug 'tpope/vim-vinegar' "directory browser. '-' to view directory and go up directory, 'I' to view hints
-Plug 'Valloric/YouCompleteMe' "autocompletion
+" Plug 'Valloric/YouCompleteMe' "autocompletion
 Plug 'vim-airline/vim-airline' "powerline alternative
 Plug 'vim-airline/vim-airline-themes' "powerline alternative
 Plug 'vim-scripts/indentpython.vim' "python indentation
 
 call plug#end()
+"Plug 'alfredodeza/pytest.vim'
 "Plug 'lambdalisue/vim-gista' "for gists
 "Plug 'morhetz/gruvbox' "color scheme
 "Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -70,7 +69,6 @@ set nobackup
 set noswapfile
 set nowritebackup
 set relativenumber
-" set rtp=~/.fzf "for fzf
 set ruler
 set scrolloff=5
 set shiftwidth=4
@@ -114,6 +112,9 @@ syntax on
 " fix fish shell compat with vim, necessary for vim-signify
 set shell=/bin/bash
 
+" fzf setup
+" set rtp+=~/.fzf
+
 " Rebinds
 " -----------------------------------------------------------------------------
 nnoremap ; :
@@ -126,7 +127,7 @@ nnoremap <silent><leader>Q :qa<CR>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <C-H> <C-W><C-H 
 " de-highlight
 nnoremap <silent> <leader>x :noh<cr>
 " reload vim configuration
@@ -144,6 +145,9 @@ noremap L $
 nnoremap Q <nop>
 " turn off search highlight
 nnoremap <leader>x :nohlsearch<CR>
+" open current file in chrome
+nmap <silent> <leader>ch :exec 'silent !start % &'
+" nnoremap <F12>c :exe ':silent !chromium-browser %'<CR>
 
 " nnoremap <leader>g :Gista list<cr>
 
@@ -182,8 +186,11 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
 
+" remove trailing spaces
+autocmd BufWritePre *.py :%s/\s\+$//e
+
 " indentation for for other files
-au BufNewFile,BufRead *.js, *.html, *.css:
+au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
@@ -202,8 +209,7 @@ let g:signify_sign_show_count = 0
 " neomake
 let g:neomake_error_sign = {
     \ 'text': '✖',
-    \ 'texthl': 'ErrorMsg',
-    \ }
+    \ 'texthl': 'ErrorMsg', }
 " vim-pydoc
 let g:pydoc_cmd = "/usr/bin/pydoc"
 " SimpylFold, show docstrings on fold
@@ -216,20 +222,20 @@ let g:airline#extensions#tabline#enabled = 1    "show buffers
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline_section_y = ''
 " CtrlP settings
 let g:ctrlp_switch_buffer = 0 "always open files in new buffer
-let g:ctrlp_map = '<c-p:'
-cet g:ctrlp_cmd = 'CtrlP'
-" syntastic
-let g:tsquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""' "let ctrlp use ag 
 " vim-markdown
 " let g:vim_markdown_folding_disabled=1  " Disable folding of Markdown files
 " vim-gista
 " let g:gista#github_user = 'bm5w'
-" youcompleteme for as you type complete with typescript
-if !exists("g:ycm_semantic_triggers")
-    let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers['typescript'] = ['.']
+" syntastic
+let g:synatastic_javascript_checkers = ['eslint']
+" syntastic react
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+" eslint
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
