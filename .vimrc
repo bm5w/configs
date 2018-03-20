@@ -157,6 +157,7 @@ nnoremap <leader>x :nohlsearch<CR>
 
 " recognize (and highlight) esoteric filetypes
 au BufRead,BufNewFile *.geojson set filetype=javascript
+au BufRead,BufNewFile *.jsx set filetype=javascript
 au BufRead,BufNewFile *.glsl set filetype=javascript
 au BufRead,BufNewFile *.es6 set filetype=javascript
 au BufRead,BufNewFile *.template set filetype=json
@@ -176,7 +177,7 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix |
 
 " indentation for for other files
-au BufNewFile,BufRead *.js, *.html, *.css:
+au BufNewFile,BufRead *.js, *.jsx,*.html, *.css:
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
