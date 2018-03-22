@@ -121,3 +121,7 @@ fi
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# start tmux
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
