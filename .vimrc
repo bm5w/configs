@@ -129,7 +129,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H 
 " de-highlight
-nnoremap <silent> <leader>x :noh<cr>
+nnoremap <silent><leader>x :noh<cr>
 " reload vim configuration
 nnoremap <silent><leader>r :source $MYVIMRC<CR>
 " shortcuts for junnegun's plugins
