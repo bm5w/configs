@@ -113,7 +113,7 @@ syntax on
 set shell=/bin/bash
 
 " fzf setup
-" set rtp+=~/.fzf
+set rtp+=~/.fzf
 
 " Rebinds
 " -----------------------------------------------------------------------------
