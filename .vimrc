@@ -1,4 +1,4 @@
-  Plugins — via vim-plug
+" Plugins — via vim-plug
 " -----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'alfredodeza/pytest.vim'
@@ -104,7 +104,7 @@ let g:html_indent_script1 = "inc"
 let g:html_index_style1 = "inc"
 
 " flake8 in gutter
-autocmd BufWritePost *.py call Flake8()
+" autocmd BufWritePost *.py call flake8#Flake8()
 let g:flake8_show_in_gutter=1
 
 " python highlighting
@@ -149,6 +149,7 @@ nnoremap <leader>x :nohlsearch<CR>
 
 " run Pytest
 " nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
+nmap <Leader>t <Esc>:Pytest file verbose<CR>
 " nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
 
 " more sane regex searching
@@ -221,7 +222,7 @@ let g:airline#extensions#bufferline#enabled = 1
 " CtrlP settings
 let g:ctrlp_switch_buffer = 0 "always open files in new buffer
 let g:ctrlp_map = '<c-p:'
-cet g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlP'
 " syntastic
 let g:tsquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
