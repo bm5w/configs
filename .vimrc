@@ -9,6 +9,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab' "tab completion
 Plug 'ctrlpvim/ctrlp.vim' "like ctrl p in sublime
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
