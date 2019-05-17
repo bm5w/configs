@@ -13,7 +13,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fs111/pydoc.vim' "pydocs in vim
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'hdima/python-syntax', { 'for': 'python' } "python code highlighting
-Plug 'HerringtonDarkhome/yats.vim' "typescript highlighting and dom keywords
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'jmcantrell/vim-virtualenv' "virtualenv
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
