@@ -70,6 +70,7 @@ set nobackup
 set noswapfile
 set nowritebackup
 set relativenumber
+set number
 " set rtp=~/.fzf "for fzf
 set ruler
 set scrolloff=5
@@ -151,6 +152,9 @@ nnoremap <leader>x :nohlsearch<CR>
 " nmap <silent><Leader>t <Esc>:Pytest file verbose<CR>
 nmap <Leader>t <Esc>:Pytest file verbose<CR>
 " nmap <silent><Leader>T <Esc>:Pytest file verbose --pdb<CR>
+
+" run GoTest
+nmap <Leader>gt <Esc>:w<CR><Esc>:GoBuild<Esc>:GoTest<CR>
 
 " more sane regex searching
 " nnoremap / /\v
